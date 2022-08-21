@@ -29,12 +29,26 @@ class LinkedList:
         :param data: integer data that will be used to create a node
         """
         # Write code here
+        new = Node(data,None)
+        current=self.head
+        if current is None:
+            self.head=new
+        else:
+            while current.next is not None:
+                current=current.nest
+            current.next=new
 
     def status(self):
         """
         It prints all the elements of list.
         """
         # write code here
+        elements=[]
+        current=self.head
+        while current:
+            elements.append(current.data)
+            current=current.next
+        print(elements)
 
 
 class Solution:
@@ -48,7 +62,20 @@ class Solution:
         :return: returns the sum as a linked list
         """
         # Write code here
-        
+        result=self.get_num(first_list)+self.get_num(second_list)
+        sum_list=LinkedList()
+        for digit in list(map(int,str(result)[::-1])):
+            sum_list.insert_at_end(digit)
+        return sum_list
+    def get_num(self,1: Optional[LinkedList]) -> int:
+        curr = l.head
+        if curr is None:
+            return 0
+        num = ""
+        while curr is not None:
+            num = str(curr.data) + num
+            curr = curr.next
+        return int(num)
         
 
 # Do not edit the following code      
