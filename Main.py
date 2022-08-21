@@ -35,7 +35,7 @@ class LinkedList:
             self.head=new
         else:
             while current.next is not None:
-                current=current.nest
+                current=current.next
             current.next=new
 
     def status(self):
