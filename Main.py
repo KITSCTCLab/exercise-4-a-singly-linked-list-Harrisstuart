@@ -67,7 +67,7 @@ class Solution:
         for digit in list(map(int,str(result)[::-1])):
             sum_list.insert_at_end(digit)
         return sum_list
-    def get_num(self,1: Optional[LinkedList]) -> int:
+    def get_num(self, l: Optional[LinkedList]) -> int:
         curr = l.head
         if curr is None:
             return 0
